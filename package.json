@@ -68,7 +68,8 @@
     "@stdlib/math-base-special-signum": "^0.0.8",
     "@stdlib/math-base-special-sin": "^0.0.6",
     "@stdlib/math-base-special-sqrt": "^0.0.8",
-    "@stdlib/math-base-tools-evalpoly": "^0.0.7"
+    "@stdlib/math-base-tools-evalpoly": "^0.0.7",
+    "@stdlib/error-tools-fmtprodmsg": "^0.0.2"
   },
   "devDependencies": {
     "@stdlib/assert-is-number-array": "^0.0.8",
