@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import kernelBetaincinv from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@deno/mod.js';
+import kernelBetaincinv from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@v0.1.0-deno/mod.js';
 ```
 
 #### kernelBetaincinv( a, b, p, q )
@@ -81,7 +81,7 @@ y = kernelBetaincinv( 1.0, 6.0, 0.8, 0.2 );
 
 ```javascript
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
-import kernelBetaincinv from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@deno/mod.js';
+import kernelBetaincinv from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@v0.1.0-deno/mod.js';
 
 var i;
 var p;
