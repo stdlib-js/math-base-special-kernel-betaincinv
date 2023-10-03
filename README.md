@@ -41,43 +41,30 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-kernel-betaincinv
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-kernelBetaincinv = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js' )
-```
-The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-kernel-betaincinv/tags). For example,
-
-```javascript
-kernelBetaincinv = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@v0.1.0-umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var kernelBetaincinv = require( 'path/to/vendor/umd/math-base-special-kernel-betaincinv/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.kernelBetaincinv;
-})();
-</script>
+var kernelBetaincinv = require( '@stdlib/math-base-special-kernel-betaincinv' );
 ```
 
 #### kernelBetaincinv( a, b, p, q )
@@ -108,14 +95,9 @@ y = kernelBetaincinv( 1.0, 6.0, 0.8, 0.2 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var kernelBetaincinv = require( '@stdlib/math-base-special-kernel-betaincinv' );
 
 var i;
 var p;
@@ -128,11 +110,6 @@ for ( i = 0; i < 100; i++ ) {
     b = randu() * 10.0;
     console.log( 'p: %d, \t a: %d, \t b: %d, \t f(p,a,b): %d', p.toFixed( 4 ), a.toFixed( 4 ), b.toFixed( 4 ), kernelBetaincinv( a, b, p, 1.0-p )[ 0 ] );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -187,11 +164,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-kernel-betaincinv.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-kernel-betaincinv
 
-[test-image]: https://github.com/stdlib-js/math-base-special-kernel-betaincinv/actions/workflows/test.yml/badge.svg?branch=v0.1.0
-[test-url]: https://github.com/stdlib-js/math-base-special-kernel-betaincinv/actions/workflows/test.yml?query=branch:v0.1.0
+[test-image]: https://github.com/stdlib-js/math-base-special-kernel-betaincinv/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-base-special-kernel-betaincinv/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-kernel-betaincinv/main.svg
-[coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-kernel-betaincinv?branch=v0.1.0
+[coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-kernel-betaincinv?branch=main
 
 <!--
 
@@ -219,7 +196,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/betaincinv]: https://github.com/stdlib-js/math-base-special-betaincinv/tree/umd
+[@stdlib/math/base/special/betaincinv]: https://github.com/stdlib-js/math-base-special-betaincinv
 
 <!-- </related-links> -->
 
