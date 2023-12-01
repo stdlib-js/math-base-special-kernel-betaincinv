@@ -72,7 +72,7 @@
   },
   "devDependencies": {
     "@stdlib/assert-is-number-array": "^0.1.0",
-    "@stdlib/bench": "^0.1.0",
+    "@stdlib/bench": "^0.2.1",
     "@stdlib/fs-write-file": "^0.1.1",
     "@stdlib/math-base-tools-continued-fraction": "^0.1.0",
     "@stdlib/math-base-tools-evalpoly-compile": "^0.1.0",
