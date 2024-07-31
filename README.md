@@ -50,6 +50,11 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
+kernelBetaincinv = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-kernel-betaincinv/tags). For example,
+
+```javascript
 kernelBetaincinv = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@v0.2.2-umd/browser.js' )
 ```
 
@@ -62,7 +67,7 @@ var kernelBetaincinv = require( 'path/to/vendor/umd/math-base-special-kernel-bet
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@v0.2.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -108,7 +113,7 @@ y = kernelBetaincinv( 1.0, 6.0, 0.8, 0.2 );
 <html lang="en">
 <body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@v0.2.2-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
