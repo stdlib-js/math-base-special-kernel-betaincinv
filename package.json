@@ -76,6 +76,7 @@
     "@stdlib/math-base-tools-continued-fraction": "^0.2.2",
     "@stdlib/math-base-tools-evalpoly-compile": "^0.3.0",
     "@stdlib/math-base-tools-sum-series": "^0.2.2",
+    "@stdlib/random-array-uniform": "^0.2.1",
     "@stdlib/random-base-randu": "^0.2.1",
     "@stdlib/time-current-year": "^0.2.2",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
