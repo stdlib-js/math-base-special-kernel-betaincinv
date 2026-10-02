@@ -43,38 +43,32 @@ The function computes the inverse of the lower regularized [incomplete beta func
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-kernel-betaincinv
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-kernelBetaincinv = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var kernelBetaincinv = require( 'path/to/vendor/umd/math-base-special-kernel-betaincinv/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.kernelBetaincinv;
-})();
-</script>
+var kernelBetaincinv = require( '@stdlib/math-base-special-kernel-betaincinv' );
 ```
 
 #### kernelBetaincinv( a, b, p, q )
@@ -105,15 +99,12 @@ y = kernelBetaincinv( 1.0, 6.0, 0.8, 0.2 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-kernel-betaincinv@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var EPS = require( '@stdlib/constants-float64-eps' );
+var kernelBetaincinv = require( '@stdlib/math-base-special-kernel-betaincinv' );
 
+var out;
 var i;
 var p;
 var a;
@@ -121,20 +112,120 @@ var b;
 
 for ( i = 0; i < 100; i++ ) {
     p = randu();
-    a = randu() * 10.0;
-    b = randu() * 10.0;
-    console.log( 'p: %d, \t a: %d, \t b: %d, \t f(p,a,b): %d', p.toFixed( 4 ), a.toFixed( 4 ), b.toFixed( 4 ), kernelBetaincinv( a, b, p, 1.0-p )[ 0 ] );
+    a = ( randu() * 10.0 ) + EPS;
+    b = ( randu() * 10.0 ) + EPS;
+    out = kernelBetaincinv( a, b, p, 1.0-p );
+    console.log( 'p: %d, \t a: %d, \t b: %d, \t y: %d, \t 1-y: %d', p.toFixed( 4 ), a.toFixed( 4 ), b.toFixed( 4 ), out[ 0 ].toFixed( 4 ), out[ 1 ].toFixed( 4 ) );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
+
+<!-- C interface documentation. -->
+
+* * *
+
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/kernel_betaincinv.h"
+```
+
+#### stdlib_base_kernel_betaincinv( a, b, p, q, &out1, &out2 )
+
+Computes the inverse of the lower incomplete beta function.
+
+```c
+double out1;
+double out2;
+
+stdlib_base_kernel_betaincinv( 3.0, 3.0, 0.2, 0.8, &out1, &out2 );
+```
+
+The function accepts the following arguments:
+
+-   **a**: `[in] double` first function parameter (a positive number).
+-   **b**: `[in] double` second function parameter (a positive number).
+-   **p**: `[in] double` probability.
+-   **q**: `[in] double` probability equal to `1-p`.
+-   **out1**: `[out] double*` destination pointer to store the function value `y`.
+-   **out2**: `[out] double*` destination pointer to store `1-y`.
+
+```c
+void stdlib_base_kernel_betaincinv( const double a, const double b, const double p, const double q, double *out1, double *out2 );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/kernel_betaincinv.h"
+#include "stdlib/constants/float64/eps.h"
+#include "stdlib/random/base/randu.h"
+#include <stdio.h>
+#include <stdint.h>
+
+int main( void ) {
+    struct BasePRNGObject *obj = stdlib_base_random_randu_allocate( 0 );
+    double out1;
+    double out2;
+    int32_t i;
+    double p;
+    double a;
+    double b;
+
+    for ( i = 0; i < 100; i++ ) {
+        p = stdlib_base_random_randu( obj );
+        a = ( stdlib_base_random_randu( obj ) * 10.0 ) + STDLIB_CONSTANT_FLOAT64_EPS;
+        b = ( stdlib_base_random_randu( obj ) * 10.0 ) + STDLIB_CONSTANT_FLOAT64_EPS;
+        stdlib_base_kernel_betaincinv( a, b, p, 1.0-p, &out1, &out2 );
+        printf( "p: %lf, a: %lf, b: %lf, y: %lf, 1-y: %lf\n", p, a, b, out1, out2 );
+    }
+
+    stdlib_base_random_randu_free( obj );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -219,7 +310,7 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/betaincinv]: https://github.com/stdlib-js/math-base-special-betaincinv/tree/umd
+[@stdlib/math/base/special/betaincinv]: https://github.com/stdlib-js/math-base-special-betaincinv
 
 <!-- </related-links> -->
 
