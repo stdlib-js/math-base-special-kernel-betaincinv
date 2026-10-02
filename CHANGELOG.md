@@ -4,7 +4,17 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-22)
+## Unreleased (2026-10-02)
+
+<section class="features">
+
+### Features
+
+-   [`57dd677`](https://github.com/stdlib-js/stdlib/commit/57dd6774f55c86b25b298462ab5519caa73459d4) - add C implementation for `math/base/special/kernel-betaincinv` [(#13418)](https://github.com/stdlib-js/stdlib/pull/13418)
+
+</section>
+
+<!-- /.features -->
 
 <section class="commits">
 
@@ -12,6 +22,7 @@
 
 <details>
 
+-   [`57dd677`](https://github.com/stdlib-js/stdlib/commit/57dd6774f55c86b25b298462ab5519caa73459d4) - **feat:** add C implementation for `math/base/special/kernel-betaincinv` [(#13418)](https://github.com/stdlib-js/stdlib/pull/13418) _(by Philipp Burckhardt, Karan Anand)_
 -   [`d5da0cb`](https://github.com/stdlib-js/stdlib/commit/d5da0cbb9558361e16b90a5351c04bf4cdc917f7) - **docs:** add introductory text to READMEs [(#14697)](https://github.com/stdlib-js/stdlib/pull/14697) _(by Karan Anand)_
 -   [`8896784`](https://github.com/stdlib-js/stdlib/commit/889678493331fcbbca951722f3f720497e180948) - **test:** migrate `math/base/special/kernel-betaincinv` to ULP-based testing [(#14349)](https://github.com/stdlib-js/stdlib/pull/14349) _(by Valerie Kwan)_
 
@@ -25,9 +36,10 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Karan Anand
+-   Philipp Burckhardt
 -   Valerie Kwan
 
 </section>
